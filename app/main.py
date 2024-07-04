@@ -113,7 +113,7 @@ def main():
             fig=get_radar_chart_heart(input_data)
             st.plotly_chart(fig)
           with col4:
-            st.image('assets\__results___23_0.png')
+            st.image('app\__results___23_0.jpeg')
       with col2:
           heart_disease_predictions(input_data)
       fig1=plot_line_chart_heart(input_data) 
