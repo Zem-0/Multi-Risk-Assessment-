@@ -1,8 +1,7 @@
 import pandas as pd
 import streamlit as st
-import cufflinks as cf
-cf.go_offline()
-cf.set_config_file(offline=False, world_readable=True) 
+
+
 from breast_cancer import add_sidebar_breast,get_radar_chart,add_predictions,get_line_chart_breast,plot_diagnosis_pie_chart
 from liver import liver_disease_sidebar,liver_disease_predictions,get_radar_chart_liver,get_line_chart,plot_distributions
 from heart import add_sidebar_heart,heart_disease_predictions,get_radar_chart_heart,plot_line_chart_heart
