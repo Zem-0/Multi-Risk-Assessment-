@@ -121,8 +121,7 @@ def main():
             st.plotly_chart(fig)
             st.image('assets\__results___15_0.png')
           with col4:
-            st.image('app\__results___23_0.jpeg')
-            st.image('assets\__results___10_0.png')
+            st.image('__results___23_0.png')
       with col2:
           heart_disease_predictions(input_data)
       st.image('assets\__results___13_0.png')
