@@ -30,7 +30,7 @@ def main():
   if model_choice == "Breast Cancer Prediction":
         input_data = add_sidebar_breast()
         st.title("Breast Cancer Predictor")
-        st.write("Our Breast Cancer Prediction Model leverages advanced machine learning to analyze key features such as age, tumor size, and texture, providing a quick and accurate risk assessment for breast cancer. This tool is designed to aid in early detection and prompt treatment, offering reliable results through a user-friendly interface that allows patients and healthcare providers to input relevant medical and demographic information and receive immediate feedback on potential breast cancer risk. ")
+        st.info("Our Breast Cancer Prediction Model leverages advanced machine learning to analyze key features such as age, tumor size, and texture, providing a quick and accurate risk assessment for breast cancer. This tool is designed to aid in early detection and prompt treatment, offering reliable results through a user-friendly interface that allows patients and healthcare providers to input relevant medical and demographic information and receive immediate feedback on potential breast cancer risk. ")
         col1, col2 = st.columns([4,1])
         with col1:
             with st.container():
@@ -38,8 +38,11 @@ def main():
                 with col3:
                     radar_chart = get_radar_chart(input_data)
                     st.plotly_chart(radar_chart)
+                    st.image('assets\__results___40_0 (1).png',width=400)
+
                 with col4:
                      plot_diagnosis_pie_chart()
+                     st.image('assets\__results___47_0.png')
         with col2:
             add_predictions(input_data)
             
@@ -62,8 +65,8 @@ def main():
 
         # Display Train and Test Scores
         st.subheader('Scores')
-        st.write(f"**Test Score:** 0.956")
-        st.write(f"**Train Score:** 1.000")
+        st.info(f"**Test Score:** 0.956")
+        st.info(f"**Train Score:** 1.000")
 
         # Display Classification Report
         st.subheader('Classification Report')
@@ -72,7 +75,7 @@ def main():
   elif model_choice=="Liver Disease Prediction":
         input_data = liver_disease_sidebar()
         st.title("Liver Disease Predictor")
-        st.write(" Liver Disease Prediction ML model uses patient-specific features such as Age, Gender, and various liver enzyme levels to predict the likelihood of liver disease. By analyzing these features, the model aids in early detection and treatment, improving clinical decision-making and patient outcomes. Advanced algorithms like decision trees, random forests, or neural networks ensure high accuracy and reliability in predictions.")
+        st.info(" Liver Disease Prediction ML model uses patient-specific features such as Age, Gender, and various liver enzyme levels to predict the likelihood of liver disease. By analyzing these features, the model aids in early detection and treatment, improving clinical decision-making and patient outcomes. Advanced algorithms like decision trees, random forests, or neural networks ensure high accuracy and reliability in predictions.")
         col1, col2 = st.columns([4,1])
         with col1:
             with st.container():
@@ -81,8 +84,12 @@ def main():
                     radar_chart = get_radar_chart_liver(input_data)
                     line_chart=get_line_chart(input_data)
                     st.plotly_chart(radar_chart)
+                    st.info('Male vs Female')
+                    st.image('assets\__results___8_1.png')
+                    
                 with col4:
                     plot_distributions()
+                    st.image('assets\__results___9_0.png')
 
         with col2:
             liver_disease_predictions(input_data)
@@ -104,7 +111,7 @@ def main():
   elif model_choice=="Heart Disease Prediction":
       with st.container():
         st.title("Heart Disease Predictor")
-        st.write("In this Heart disease predictor, we delve into a dataset encapsulating various health metrics from heart patients, including age, blood pressure, heart rate, and more. Our goal is to develop a predictive model capable of accurately identifying individuals with heart disease. Given the grave implications of missing a positive diagnosis, our primary emphasis is on ensuring that the model identifies all potential patients, making recall for the positive class a crucial metric.")
+        st.info("In this Heart disease predictor, we delve into a dataset encapsulating various health metrics from heart patients, including age, blood pressure, heart rate, and more. Our goal is to develop a predictive model capable of accurately identifying individuals with heart disease. Given the grave implications of missing a positive diagnosis, our primary emphasis is on ensuring that the model identifies all potential patients, making recall for the positive class a crucial metric.")
       input_data=add_sidebar_heart()
       col1, col2 = st.columns([4,1])
       with col1:
@@ -112,10 +119,13 @@ def main():
           with col3:    
             fig=get_radar_chart_heart(input_data)
             st.plotly_chart(fig)
+            st.image('assets\__results___15_0.png')
           with col4:
             st.image('app\__results___23_0.jpeg')
+            st.image('assets\__results___10_0.png')
       with col2:
           heart_disease_predictions(input_data)
+      st.image('assets\__results___13_0.png')
       fig1=plot_line_chart_heart(input_data) 
       st.plotly_chart(fig1)
       classification_report = {
@@ -143,7 +153,7 @@ def main():
   elif model_choice=="Diabetes Prediction":
       st.title("Diabetes Predictor")
 
-      st.write("diabetes prediction model utilizes machine learning algorithms to analyze key health indicators such as glucose levels, BMI, age, and lifestyle factors like smoking. By processing these data points, the model provides accurate predictions about an individual's likelihood of developing diabetes. This tool not only aids in early detection but also empowers healthcare professionals to implement preventive measures, thereby improving patient outcomes and reducing the burden of diabetes-related complications.")
+      st.info("diabetes prediction model utilizes machine learning algorithms to analyze key health indicators such as glucose levels, BMI, age, and lifestyle factors like smoking. By processing these data points, the model provides accurate predictions about an individual's likelihood of developing diabetes. This tool not only aids in early detection but also empowers healthcare professionals to implement preventive measures, thereby improving patient outcomes and reducing the burden of diabetes-related complications.")
       input_data=diabetes_sidebar()
       col1, col2 = st.columns([4,1])
       with col1:
@@ -152,15 +162,18 @@ def main():
               with col3:
                   radar_chart = get_radar_chart_diabetes(input_data)
                   st.plotly_chart(radar_chart)
+                  st.image('assets\__results___17_1.png')
               with col4:
                   data=get_clean_data()
                   fig1=get_parallel_coordinates_plot(input_data)
                   st.plotly_chart(fig1)
+                  st.image('assets\__results___29_1.png')
       with col2:
           diabetes_predictions(input_data)
-      with st.container():
-              line_chart=get_line_chart_diabetes(input_data)  
-              st.plotly_chart(line_chart) 
+      
+      st.image('assets\__results___54_0-removebg-preview.png')
+      line_chart=get_line_chart_diabetes(input_data)  
+      st.plotly_chart(line_chart) 
       data = {
     'Class': ['0.0', '1.0', 'accuracy', 'macro avg', 'weighted avg'],
     'precision': [0.86, 0.65, '-', 0.76, 0.79],
@@ -179,7 +192,7 @@ def main():
       st.table(df)
   elif model_choice=="Stroke Prediction": 
       st.title("Stroke Predictor")
-      st.write("This app employs a machine learning model to predict the likelihood of stroke based on key health indicators such as age, gender, hypertension, heart disease, average glucose level, BMI, and smoking status. By analyzing these factors, the model provides insights into the probability of stroke occurrence, aiding healthcare professionals in early intervention and personalized patient care. Please note, this app serves for demonstration purposes and does not substitute professional medical advice.")
+      st.info("This app employs a machine learning model to predict the likelihood of stroke based on key health indicators such as age, gender, hypertension, heart disease, average glucose level, BMI, and smoking status. By analyzing these factors, the model provides insights into the probability of stroke occurrence, aiding healthcare professionals in early intervention and personalized patient care. Please note, this app serves for demonstration purposes and does not substitute professional medical advice.")
     
       input_data=stroke_disease_sidebar()
       input_datat2=add_sidebar_breast()
@@ -191,8 +204,12 @@ def main():
             col3,col4=st.columns(2)
             with col3:
                 st.plotly_chart(work_type_fig)
+                st.image('assets\__results___24_1.png')
+                st.image('assets\__results___27_1.png')
             with col4:
                  st.plotly_chart(smoking_status_fig)
+                 st.image('assets\__results___30_1.png')
+                 st.image('assets\__results___28_1.png')
       with col2:
           stroke_disease_predictions(input_data)
       fig=get_line_chart_breast(input_datat2)
@@ -217,3 +234,4 @@ def main():
       st.table(df_classification_report)
 if __name__ == '__main__':
   main()
+

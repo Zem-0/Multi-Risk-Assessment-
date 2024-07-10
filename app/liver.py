@@ -203,7 +203,7 @@ def liver_disease_predictions(input_data):
     st.write("Probability of no disease: ", model.predict_proba(input_array_scaled)[0][0])
     st.write("Probability of disease: ", model.predict_proba(input_array_scaled)[0][1])
     
-    st.write("This app can assist medical professionals in making a diagnosis, but should not be used as a substitute for a professional diagnosis.")
+    st.warning("This app can assist medical professionals in making a diagnosis, but should not be used as a substitute for a professional diagnosis.")
 
 
 def main():

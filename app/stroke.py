@@ -90,9 +90,9 @@ def stroke_disease_predictions(input_data):
     else:
         st.write("<span class='diagnosis benign'>No Disease</span>", unsafe_allow_html=True)
     st.write("Probability of no disease: ", probability_no_disease)
-    st.write("Probability of disease:          \n ", probability_disease)
+    st.write("Probability of disease:               ", probability_disease)
     
-    st.write("This app can assist medical professionals in making a diagnosis, but should not be used as a substitute for a professional diagnosis.")
+    st.warning("This app can assist medical professionals in making a diagnosis, but should not be used as a substitute for a professional diagnosis.")
 def get_bar_chart(input_data): # Debugging statement
     categories = ['age', 'hypertension', 'heart_disease', 'avg_glucose_level', 'bmi']
     values = input_data
