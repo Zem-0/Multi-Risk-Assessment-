@@ -38,7 +38,7 @@ def main():
                 with col3:
                     radar_chart = get_radar_chart(input_data)
                     st.plotly_chart(radar_chart)
-                    st.image('assets\__results___40_0 (1).png',width=400)
+                    st.image('assets/__results___40_0 (1).png',width=400)
 
                 with col4:
                      plot_diagnosis_pie_chart()
