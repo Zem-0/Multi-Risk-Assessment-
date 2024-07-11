@@ -38,11 +38,11 @@ def main():
                 with col3:
                     radar_chart = get_radar_chart(input_data)
                     st.plotly_chart(radar_chart)
-                    st.image('assets/__results___40_0 (1).png',width=400)
+                    st.image('assets\__results___40_0 (1).png',width=400)
 
                 with col4:
                      plot_diagnosis_pie_chart()
-                     st.image('assets/__results___47_0.png')
+                     st.image('assets\__results___47_0.png')
         with col2:
             add_predictions(input_data)
             
@@ -85,11 +85,11 @@ def main():
                     line_chart=get_line_chart(input_data)
                     st.plotly_chart(radar_chart)
                     st.info('Male vs Female')
-                    st.image('assets/__results___8_1.png')
+                    st.image('assets\__results___8_1.png')
                     
                 with col4:
                     plot_distributions()
-                    st.image('assets/__results___9_0.png')
+                    st.image('assets\__results___9_0.png')
 
         with col2:
             liver_disease_predictions(input_data)
@@ -119,12 +119,12 @@ def main():
           with col3:    
             fig=get_radar_chart_heart(input_data)
             st.plotly_chart(fig)
-            st.image('assets/__results___15_0.png')
+            st.image('assets\__results___15_0.png')
           with col4:
             st.image('__results___23_0.png')
       with col2:
           heart_disease_predictions(input_data)
-      st.image('assets/__results___13_0.png')
+      st.image('assets\__results___13_0.png')
       fig1=plot_line_chart_heart(input_data) 
       st.plotly_chart(fig1)
       classification_report = {
@@ -161,16 +161,16 @@ def main():
               with col3:
                   radar_chart = get_radar_chart_diabetes(input_data)
                   st.plotly_chart(radar_chart)
-                  st.image('assets/__results___17_1.png')
+                  st.image('assets\__results___17_1.png')
               with col4:
                   data=get_clean_data()
                   fig1=get_parallel_coordinates_plot(input_data)
                   st.plotly_chart(fig1)
-                  st.image('assets/__results___29_1.png')
+                  st.image('assets\__results___29_1.png')
       with col2:
           diabetes_predictions(input_data)
       
-      st.image('assets/__results___54_0-removebg-preview.png')
+      st.image('assets\__results___54_0-removebg-preview.png')
       line_chart=get_line_chart_diabetes(input_data)  
       st.plotly_chart(line_chart) 
       data = {
@@ -203,12 +203,12 @@ def main():
             col3,col4=st.columns(2)
             with col3:
                 st.plotly_chart(work_type_fig)
-                st.image('assets/__results___24_1.png')
-                st.image('assets/__results___27_1.png')
+                st.image('assets\__results___24_1.png')
+                st.image('assets\__results___27_1.png')
             with col4:
                  st.plotly_chart(smoking_status_fig)
-                 st.image('assets/__results___30_1.png')
-                 st.image('assets/__results___28_1.png')
+                 st.image('assets\__results___30_1.png')
+                 st.image('assets\__results___28_1.png')
       with col2:
           stroke_disease_predictions(input_data)
       fig=get_line_chart_breast(input_datat2)
@@ -233,4 +233,3 @@ def main():
       st.table(df_classification_report)
 if __name__ == '__main__':
   main()
-
