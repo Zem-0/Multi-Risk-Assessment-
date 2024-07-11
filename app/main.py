@@ -122,6 +122,7 @@ def main():
             st.image('assets/__results___15_0.png')
           with col4:
             st.image('assets/__results___23_0.png')
+            st.image('assets/__results___30_1.png')
       with col2:
           heart_disease_predictions(input_data)
       st.image('assets/__results___13_0.png')
